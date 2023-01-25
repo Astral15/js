@@ -1,2 +1,2 @@
 # javascript
-Hello
+This is repository for js
