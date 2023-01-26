@@ -1,37 +1,52 @@
 <script>
-import List from './List.vue'
-  export default{
-    components:{
-      List
+
+export default {
+  data() {
+    return {
+      width: 20,
+      height: 30,
+      simagle: null,
+      show: false
+    }
+  },
+  computed: {
+    calculateSpace(){
+      return this.width * this.height
     },
-    data(){
-      return{
-        data: [
-         {
-          id:1,
-          title: "Chess",
-          url:"https://www.chess.com",
-          description:"Chess"
-         },
-         {
-          id:2,
-          title: "Youtube",
-          url:"https://www.youtube.com/",
-          description:"Youtube",
-         } ,
-         {
-          id:3,
-          title: "Chrome",
-          url:"https://www.google.com/search?channel=fs&client=ubuntu&q=chrome",
-          description: "Chrome",
-         },
-        ]
-      }
-    
-    } 
-    
+    calculateMoculoba(){
+      return this.calculateSpace * this.simagle
+    }
   }
+}
+
 </script>
+
 <template>
-  <List :data="data"/>
+  <div>
+    <form>
+
+      <label>სიგრძე</label><br />
+      <input v-model="width" /><br />
+
+      <label>სიგანე</label><br />
+      <input v-model="height" /><br />
+      
+      <label>სიმაღლე</label><br />
+      <input v-model="simagle" /><br />
+    </form>
+    <br />
+    <button @click.prevent="show = !show">
+      <span v-if="!show">Show</span>
+      <span v-if="show">Hide</span>
+    </button>
+    <p v-if="show">ფართობი: {{ calculateSpace }}</p>
+    <p v-if="show">მოცულობა: {{ calculateMoculoba }}</p>
+    <br>
+    <div v-bind:style="{ width: width + 'px', height: height + 'px', backgroundColor: 'red' }"></div>
+<!-- <input type="color">-->
+  </div>
 </template>
+
+<style>
+
+</style>

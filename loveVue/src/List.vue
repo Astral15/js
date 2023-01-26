@@ -12,7 +12,7 @@ export default{
     },
     data() {
         return {description: ''} 
-    }, 
+    },
 }
 </script>
 <template>
@@ -25,7 +25,8 @@ export default{
     <div>{{ description }}</div>    
 </template>
 
-<style scoped> 
+<style scoped>
+/* computed: , v-model , return show : false ,  <span v-for="!show"> show </span>  , @click  input type color */
  ul {
     background-color: lightblue;
     color: red; 
