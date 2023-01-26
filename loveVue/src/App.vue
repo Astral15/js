@@ -24,7 +24,6 @@ export default {
 <template>
   <div>
     <form>
-
       <label>სიგრძე</label><br />
       <input v-model="width" /><br />
 
@@ -42,11 +41,7 @@ export default {
     <p v-if="show">ფართობი: {{ calculateSpace }}</p>
     <p v-if="show">მოცულობა: {{ calculateMoculoba }}</p>
     <br>
-    <div v-bind:style="{ width: width + 'px', height: height + 'px', backgroundColor: 'red' }"></div>
-<!-- <input type="color">-->
+    <div v-bind:style="{ width: width + 'px', height: height + 'px', backgroundColor: color } "></div>
+    <input type="color" v-model="color">
   </div>
 </template>
-
-<style>
-
-</style>
