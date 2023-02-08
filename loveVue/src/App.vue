@@ -45,7 +45,7 @@ export default {
         this.getDataFromApiUrl()
       },
       changeLang() {
-        this.lang = e.target.lang
+        this.lang = e.target.value
         this.getDataFromApiUrl()
       },
     },
